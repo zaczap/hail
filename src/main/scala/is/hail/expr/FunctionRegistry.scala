@@ -1293,6 +1293,8 @@ object FunctionRegistry {
     "x" -> "Number of successes", "n" -> "Number of trials", "p" -> "Probability of success under the null hypothesis",
     "alternative" -> "Alternative hypothesis, must be \"two.sided\", \"greater\" or \"less\".")
 
+  register("faf", { (ac:Int, an:Int, ci:Double) => calcFreqFilter(ac,an,ci)}, """Return the filtering allele frequency for a given allele count and number (with a particular degree of confidence).""", "ac" -> "Allele count", "an" -> "Allele number", "ci" -> "Confidence level (1-alpha)")
+
   // NB: merge takes two structs, how do I deal with structs?
   register("exp", { (x: Double) => math.exp(x) },
     """
