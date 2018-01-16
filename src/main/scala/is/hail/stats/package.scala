@@ -120,7 +120,7 @@ package object stats {
     }
   }
 
-  def calcFreqFilter(ac: Int, an: Int, ci: Double = .95, lower: Double = .1/(2*60706),  upper:Double = 2, tol:Double = 1e-7, precision:Double = 1e-6): Double = {
+  def calcFreqFilter(ac: Int, an: Int, ci: Double = .95, lower: Double = 1e-10,  upper:Double = 2, tol:Double = 1e-7, precision:Double = 1e-6): Double = {
     if (ac <= 0 || an == 0) {
       0.0
     } else {
